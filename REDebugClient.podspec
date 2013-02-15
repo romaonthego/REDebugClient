@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.authors     = { 'Roman Efimov' => 'romefimov@gmail.com' }
   s.homepage    = 'https://github.com/romaonthego/REDebugClient'
   s.source      = { :git => 'https://github.com/romaonthego/REDebugClient.git',
-                    :commit => 'ad80ba49e8d721730db6150dd08e3a4c368064f7' }
+                    :tag => '1.0' }
   s.license     = { :type => "MIT", :file => "LICENSE" }
 
   # Platform setup
