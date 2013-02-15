@@ -17,17 +17,22 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    RELogConnect();
+    NSLog(@"Test");
+    NSLog(@"Yo");
     
-
+    RELogConnect(@"localhost", 9000);
     RELogClear();
-    RELogInfo(@"Info\nTest");
-    RELogWarning(@"Test = %@", self.window);
+    
+    
+    RELogInfo(@"Multi\nLine");
+    RELogWarning(@"UIWindow: %@", self.window);
     RELogError(@"Error");
     
-    NSDictionary *test = @{@"test": @123, @"demo": @{@"yolo": @1, @"haha": @2}};
+    NSDictionary *dictionary = @{@"test": @123,
+                                 @"demo": @{@"foo": @"bar",
+                                            @"var": @2}};
     
-    RELog(@"Test %@", test);
+    RELog(@"NSDictionary: %@", dictionary);
     
 
     //RELogWarning(@"Warning");

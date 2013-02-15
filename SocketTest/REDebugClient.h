@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "GCDAsyncSocket.h"
 
-void RELogConnect();
+void RELogConnect(NSString *host, uint16_t port);
 void RELogClear();
 void RELog(NSString *message, ...);
 void RELogInfo(NSString *message, ...);
@@ -30,7 +30,7 @@ typedef enum _REDebugClientMessageType {
 @property (strong, readonly, nonatomic) GCDAsyncSocket *asyncSocket;
 
 + (REDebugClient *)sharedClient;
-- (void)connect;
+- (void)connectToHost:(NSString *)host post:(uint16_t)port;
 - (void)sendMessage:(NSString *)message;
 - (void)sendInfo:(NSString *)message;
 - (void)sendWarning:(NSString *)message;

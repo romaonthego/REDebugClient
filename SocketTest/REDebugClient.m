@@ -8,9 +8,9 @@
 
 #import "REDebugClient.h"
 
-void RELogConnect()
+void RELogConnect(NSString *host, uint16_t port)
 {
-    [[REDebugClient sharedClient] connect];
+    [[REDebugClient sharedClient] connectToHost:host post:port];
 }
 
 void RELogClear()
@@ -52,11 +52,6 @@ void RELogError(NSString *message, ...)
 
 @implementation REDebugClient
 
-void test(NSString *message, ...)
-{
-    
-}
-
 + (REDebugClient *)sharedClient
 {
     static REDebugClient *sharedClient;
@@ -87,13 +82,25 @@ void test(NSString *message, ...)
     }
 }
 
-- (void)connect
+- (void)writeDictionary:(NSDictionary *)dictionary
 {
-    [self connectToHost:@"localhost" post:9000];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:nil];
+    NSString *jsonString = [NSString stringWithFormat:@"%@\n", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+    NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    [_asyncSocket writeData:data withTimeout:0 tag:0];
 }
 
 - (void)sendMessage:(NSString *)message level:(NSInteger)level
 {
+    
+    NSDate *date = 
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    NSTimeInterval milisecondedDate = ([[NSDate date] timeIntervalSince1970] * 1000);
+    
+    NSLog(@"%@.%f", [formatter stringFromDate:[NSDate date]], milisecondedDate);
+    
     NSDictionary *info = @{
                            @"method": @2,
                            @"content": @{
@@ -101,18 +108,12 @@ void test(NSString *message, ...)
                                @"message": [NSString stringWithFormat:@"[%@] %@", [NSDate date], message]
     }};
     
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:info options:0 error:nil];
-    NSString *jsonString = [NSString stringWithFormat:@"%@\n", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
-    NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-	[_asyncSocket writeData:data withTimeout:0 tag:0];
+    [self writeDictionary:info];
 }
 
 - (void)sendClear
 {
-    NSDictionary *info = @{@"method": @1};
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:info options:0 error:nil];
-    NSString *jsonString = [NSString stringWithFormat:@"%@\n", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
-	[_asyncSocket writeData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] withTimeout:0 tag:0];
+    [self writeDictionary:@{@"method": @1}];
 }
 
 - (void)sendMessage:(NSString *)message
