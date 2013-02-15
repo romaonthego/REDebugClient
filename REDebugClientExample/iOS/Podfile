@@ -1,2 +1,2 @@
-platform :ios
+platform :ios, '4.3'
 pod 'REDebugClient', '~> 1.0'
