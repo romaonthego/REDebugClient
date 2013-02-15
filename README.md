@@ -7,7 +7,6 @@ Advanced remote Xcode logging in terminal app. Allows to redirect log output of 
 ## Requirements
 * Xcode 4.5 or higher
 * Apple LLVM compiler
-* iOS 4.3 or higher
 * ARC
 
 ## Installation
