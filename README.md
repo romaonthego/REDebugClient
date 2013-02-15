@@ -41,7 +41,7 @@ Edit your Podfile and add REDebugClient:
 
 ``` bash
 $ edit Podfile
-platform :ios, '5.0'
+platform :ios
 pod 'REDebugClient', '~> 1.0'
 ```
 
