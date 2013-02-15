@@ -53,7 +53,7 @@ $ pod install
 
 ### without CocoaPods
 
-There's only once dependency - [CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket), so you'll need to add it manually.
+There's only one dependency - [CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket), so you'll need to add it manually.
 
 ## Demo
 

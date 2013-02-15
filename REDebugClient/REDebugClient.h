@@ -34,9 +34,9 @@ void RELogWarning(NSString *message, ...);
 void RELogError(NSString *message, ...);
 
 typedef enum _REDebugClientMessageType {
-    REDebugClientMessageNone    = 0,
-    REDebugClientMessageInfo    = 1,
-    REDebugClientMessageWarning = 2,
+    REDebugClientMessageNone     = 0,
+    REDebugClientMessageInfo     = 1,
+    REDebugClientMessageWarning  = 2,
     REDebugClientMessageError    = 3
 } REDebugClientMessageType;
 
