@@ -1,6 +1,6 @@
 # REDebugClient
 
-Advanced remote Xcode logging in Terminal app. Allows to redirect log output of Xcode console to Terminal when running iPhone Simulator.
+Advanced remote Xcode logging in Terminal app. Allows to redirect log output of Xcode console to Terminal when running iPhone Simulator / Mac OS X app.
 
 ![Screenshot of REDebugClient](https://github.com/romaonthego/REDebugClient/raw/master/Screenshot.png "REDebugClient Screenshot")
 
@@ -40,7 +40,7 @@ Edit your Podfile and add REDebugClient:
 
 ``` bash
 $ edit Podfile
-platform :ios
+platform :ios, '4.3' # or platform :ox, '10.7'
 pod 'REDebugClient', '~> 1.0'
 ```
 
