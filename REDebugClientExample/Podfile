@@ -1,0 +1,2 @@
+platform :ios
+pod 'REDebugClient', '~> 1.0'
