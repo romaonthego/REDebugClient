@@ -98,7 +98,7 @@ void test(NSString *message, ...)
                            @"method": @2,
                            @"content": @{
                                @"level": @(level),
-                               @"message": message
+                               @"message": [NSString stringWithFormat:@"[%@] %@", [NSDate date], message]
     }};
     
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:info options:0 error:nil];
