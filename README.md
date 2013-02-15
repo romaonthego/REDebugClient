@@ -1,6 +1,6 @@
 # REDebugClient
 
-Advanced remote Xcode logging in terminal app. Allows to redirect log output of Xcode console to Terminal when running iPhone Simulator.
+Advanced remote Xcode logging in Terminal app. Allows to redirect log output of Xcode console to Terminal when running iPhone Simulator.
 
 ![Screenshot of REDebugClient](https://github.com/romaonthego/REDebugClient/raw/master/Screenshot.png "REDebugClient Screenshot")
 
