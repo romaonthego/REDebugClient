@@ -10,16 +10,6 @@ Advanced remote Xcode logging in terminal app. Allows to redirect log output of 
 * iOS 4.3 or higher
 * ARC
 
-## Demo
-
-First, you need to install dependencies using [CocoaPods](http://cocoapods.org/) package manager in the demo project:
-
-``` bash
-$ pod install
-```
-
-After that, build and run the `REDebugClientExample` project in Xcode to see `REDebugClient` in action.
-
 ## Installation
 
 ### Server
@@ -64,6 +54,16 @@ $ pod install
 ### without CocoaPods
 
 There's only once dependency - [CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket), so you'll need to add it manually.
+
+## Demo
+
+First, you need to install dependencies using [CocoaPods](http://cocoapods.org/) package manager in the demo project:
+
+``` bash
+$ pod install
+```
+
+After that, build and run the `REDebugClientExample` project in Xcode to see `REDebugClient` in action.
 
 ## Example Usage
 
