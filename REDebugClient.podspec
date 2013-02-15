@@ -10,8 +10,6 @@ Pod::Spec.new do |s|
 
   # Platform setup
   s.requires_arc = true
-  s.ios.deployment_target = '4.3'
-  s.osx.deployment_target = '10.7'
 
   s.source_files = 'REDebugClient'
   s.public_header_files = 'REDebugClient/*.h'
