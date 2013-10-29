@@ -13,7 +13,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    RELogConnect(@"localhost", 9000);
+    RELogConnect(@"localhost", 5000);
     RELogClear();
     
     RELog(@"Default");

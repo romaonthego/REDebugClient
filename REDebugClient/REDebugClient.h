@@ -26,32 +26,31 @@
 #import <Foundation/Foundation.h>
 #import "GCDAsyncSocket.h"
 
-void RELogConnect(NSString *host, uint16_t port);
+void RELogConnect	(NSString *host, uint16_t port);
 void RELogClear();
-void RELog(NSString *message, ...);
-void RELogInfo(NSString *message, ...);
-void RELogWarning(NSString *message, ...);
-void RELogError(NSString *message, ...);
+void RELog				(NSString *message, ...);
+void RELogInfo		(NSString *message, ...);
+void RELogWarning	(NSString *message, ...);
+void RELogError		(NSString *message, ...);
 
-typedef enum _REDebugClientMessageType {
-    REDebugClientMessageNone     = 0,
-    REDebugClientMessageInfo     = 1,
-    REDebugClientMessageWarning  = 2,
-    REDebugClientMessageError    = 3
-} REDebugClientMessageType;
+typedef NS_ENUM(NSUInteger,REDebugClientMessageType) {
+	REDebugClientMessageNone, REDebugClientMessageInfo, REDebugClientMessageWarning, REDebugClientMessageError
+};
 
-@interface REDebugClient : NSObject <GCDAsyncSocketDelegate> {
+@interface REDebugClient : NSObject <GCDAsyncSocketDelegate>
+{
     NSMutableArray *_queue;
 }
 
-@property (strong, readonly, nonatomic) GCDAsyncSocket *asyncSocket;
+@property (readonly) GCDAsyncSocket *asyncSocket;
 
-+ (REDebugClient *)sharedClient;
-- (void)connectToHost:(NSString *)host post:(uint16_t)port;
-- (void)sendMessage:(NSString *)message;
-- (void)sendInfo:(NSString *)message;
-- (void)sendWarning:(NSString *)message;
-- (void)sendError:(NSString *)message;
-- (void)sendClear;
++ (REDebugClient*) sharedClient;
+
+- (void) connectToHost:(NSString*)host post:(uint16_t)port;
+- (void) sendMessage:	 (NSString*)message;
+- (void) sendInfo:		 (NSString*)message;
+- (void) sendWarning:	 (NSString*)message;
+- (void) sendError:		 (NSString*)message;
+- (void) sendClear;
 
 @end
