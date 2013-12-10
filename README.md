@@ -22,7 +22,7 @@ $ debugserver
 
 You can specify host and port in debug server, for instance:
 ``` bash
-$ debugserver -h 0.0.0.0 -p 5000
+$ debugserver -h 0.0.0.0 -p 9000
 ```
 
 ### Install REDebugClient
