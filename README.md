@@ -5,7 +5,7 @@ Advanced remote Xcode logging in Terminal app. Allows to redirect log output of 
 ![Screenshot of REDebugClient](https://github.com/romaonthego/REDebugClient/raw/master/Screenshot.png "REDebugClient Screenshot")
 
 ## Requirements
-* Xcode 4.5 or higher
+* Xcode 5 or higher
 * Apple LLVM compiler
 * ARC
 
